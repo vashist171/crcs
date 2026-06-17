@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express Delivery Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="delivery.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Express Delivery Dashboard</h1>
+
+        <div class="form-section">
+
+            <input type="text" id="driverName" placeholder="Driver Name">
+
+            <input type="text" id="deliveryAddress" placeholder="Destination Address">
+
+            <select id="deliveryZone">
+                <option value="">Select Zone</option>
+                <option value="Downtown">Downtown</option>
+                <option value="Uptown">Uptown</option>
+                <option value="Midtown">Midtown</option>
+                <option value="Suburbs">Suburbs</option>
+            </select>
+
+            <input type="number" id="orderValue" placeholder="Order Value ($)">
+
+            <input type="number" id="estTime" placeholder="Est. Time (mins)">
+
+            <select id="deliveryStatus">
+                <option value="">Select Status</option>
+                <option value="Received">Received</option>
+                <option value="Dispatched">Dispatched</option>
+                <option value="Out for Delivery">Out for Delivery</option>
+                <option value="Delivered">Delivered</option>
+            </select>
+
+            <button onclick="addDelivery()" id="submitBtn">
+                Add Delivery
+            </button>
+
+        </div>
+
+        <div class="search-box">
+            <input type="text" id="search" placeholder="Search Driver..." onkeyup="searchDeliveries()">
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Driver Name</th>
+                        <th>Destination</th>
+                        <th>Zone</th>
+                        <th>Order Value</th>
+                        <th>Est. Time</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="deliveryTable">
+                    <!-- Delivery rows will be generated dynamically -->
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="delivery.js"></script>
+
+</body>
+
+</html>
